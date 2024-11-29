@@ -2,6 +2,12 @@
 
 ### A collection of Yara rules for malware scanning
 ==================================================================================
+## TL;DR
+
+- Install YARA and write or obtain rules.
+- Use the `yara` command-line tool to scan files or directories.
+- Optionally, automate the scanning process with scripts.
+==================================================================================
 
 # How to use:
 
@@ -75,9 +81,45 @@ YARA provides several command-line options for more control over the scanning pr
 
 ### Example of a Recursive Scan:
 ```yara -r -v /path/to/rules.yar /path/to/directory```
+
 ==================================================================================
 
 ## 5. Using YARA with Multiple Rules
 
 If you have multiple YARA rules in a file, YARA will check each rule and report matches. Alternatively, you can scan using multiple rule files:
+```yara /path/to/rules1.yar /path/to/rules2.yar /path/to/file_or_directory```
+
+==================================================================================
+
+
+## 6. Running YARA via Script (Optional)
+
+You can automate YARA scanning by writing a simple script in Python, Bash, or PowerShell.
+
+### Install the `yara` Python Library
+```pip install yara-python```
+
+### Python Example Script
+```
+import yara
+
+# Load the YARA rule file
+rules = yara.compile(filepath='/path/to/rules.yar')
+
+# Scan a file
+matches = rules.match('/path/to/file.exe')
+
+# Display the results
+for match in matches:
+    print(f"Match found: {match}")
+```
+
+This Python script compiles your YARA rules and scans a specified file for matches.
+
+
+
+
+
+
+
 
