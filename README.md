@@ -2,11 +2,13 @@
 
 ### A collection of Yara rules for malware scanning
 ==================================================================================
+
 ## TL;DR
 
 - Install YARA and write or obtain rules.
 - Use the `yara` command-line tool to scan files or directories.
 - Optionally, automate the scanning process with scripts.
+
 ==================================================================================
 
 # How to use:
