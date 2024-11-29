@@ -1,7 +1,6 @@
 # Yara-Rules
 
 ### A collection of Yara rules for malware scanning
-
 ==================================================================================
 
 # How to use:
@@ -35,7 +34,6 @@ Alternatively, if you use **Chocolatey**, you can install it via:
 ## 2. Write or Obtain YARA Rules
 
 YARA rules are written to identify patterns in files. You can create custom rules or use publicly available ones.
-
 ==================================================================================
 
 ## 3. Running YARA on Files or Directories
@@ -63,7 +61,6 @@ If a match is found, YARA will return the rule name and the file path:
 ```ExampleRule /path/to/example.exe```
 
 If no match is found, there will be no output.
-
 ==================================================================================
 
 ## 4. Advanced Options
@@ -76,6 +73,11 @@ YARA provides several command-line options for more control over the scanning pr
 - `-v`: Enable verbose output.
 - `-t <timeout>`: Set a timeout in seconds (useful for large files).
 
-### Example of a Recursive Scan with Verbose Output:
+### Example of a Recursive Scan:
 ```yara -r -v /path/to/rules.yar /path/to/directory```
+==================================================================================
+
+## 5. Using YARA with Multiple Rules
+
+If you have multiple YARA rules in a file, YARA will check each rule and report matches. Alternatively, you can scan using multiple rule files:
 
