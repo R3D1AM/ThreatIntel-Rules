@@ -1,0 +1,53 @@
+# IoCs
+
+### 1. **Office 365 Account Used for Initial Communication**
+| **Email**                              |
+|----------------------------------------|
+| helpdesk@llladminhlpll.onmicrosoft.com |
+
+### 2. **IP Addresses for Command-and-Control (C2) Communication**
+| **IP Address**                  |
+|----------------------------------|
+| 78.46.67[.]201                   |
+| 185.190.251.16:443              |
+| 207.90.238.52:443               |
+| 89.185.80.86:443                |
+| 74.178.90[.]36:443              |
+| 195.123.241[.]24:443            |
+
+### 3. **Suspicious File Paths**
+| **File Path**                                       |
+|-----------------------------------------------------|
+| C:\Users\<username>\AppData\Local\OneDriveUpdate\OneDriveStandaloneUpdaexe |
+| C:\Users\<username>\AppData\Local\OneDriveUpdate\winhttp.dll |
+| C:\Users\<username>\AppData\Local\OneDriveUpdate\settingsbackup.dat |
+
+### 4. **Domain/Host Names for Payload Download**
+| **Domain/Host**                  |
+|----------------------------------|
+| blob.core.windows[.]net         |
+
+### 5. **Registry Keys Modified by the Attacker**
+| **Registry Key**                                                                 |
+|----------------------------------------------------------------------------------|
+| reg add "HKLM\SOFTWARE\TitanPlus" /v 1 /t REG_SZ /d "185.190.251.16:443;207.90.238.52:443;89.185.80.86:443" /f |
+
+### 6. **Command-and-Control Domains/IPs via ProtonVPN**
+| **IP Address**              |
+|----------------------------|
+| 207.90.238[.]99             |
+| 206.206.123.75             |
+| 109.107.170[.]2            |
+| 195.133.1[.]117            |
+
+### 7. **Suspicious Processes**
+| **Process**                                                                 |
+|-----------------------------------------------------------------------------|
+| ProtonVPN.exe: C:\Users\Public\Downloads\ProtonVPN.exe                       |
+| QuickAssist.exe: C:\Program Files\WindowsApps\MicrosoftCorporationll.QuickAssist_2.0.32.0_x64_8wekyb3d8bbwe\Microsoft.RemoteAssistance.QuickAssist\QuickAssist.exe |
+
+### 8. **Command Line Observations**
+| **Command Line**                                                   |
+|--------------------------------------------------------------------|
+| tar xf pack.zip -C C:\Users\<username>\AppData\Local\OneDriveUpdate |
+| OneDriveStandaloneUpdater.exe -Embedding                          |
